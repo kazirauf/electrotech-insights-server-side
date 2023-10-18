@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "image": "https://www.apple.com/ac/structured-data/images/open_graph_logo.png?202110180743",
+      "name": "Apple"
+    },
+    {
+      "id": 2,
+      "image": "https://tailieu.antoanthongtin.vn/Files/files/site-2/images/gettyimages-1207206237.jpg",
+      "name": "Google"
+    },
+    {
+      "id": 3,
+      "image": "https://bsmedia.business-standard.com/_media/bs/img/about-page/1562575696.png?im=FeatureCrop,size=(826,465)",
+      "name": "Samsung"
+    },
+    {
+      "id": 4,
+      "image": "https://etimg.etb2bimg.com/photo/94265107.cms",
+      "name": "Intel"
+    },
+    {
+      "id": 5,
+      "image": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/01/sony-logo-playstation-ps-2194279.jpg?tf=3840x",
+      "name": "Sony"
+    },
+    {
+      "id": 6,
+      "image": "https://learn.microsoft.com/en-us/media/open-graph-image.png",
+      "name": "Microsoft"
+    }
+  ]
+  
