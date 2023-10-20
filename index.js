@@ -31,7 +31,7 @@ async function run() {
 
    
     const addProductCollections = client.db('addProductsDB').collection('addProducts');
-
+    const newProductForCartCollections = client.db('addProductsDB').collection('cartProducts');
 
     app.get('/addProducts', async(req, res) => {
       const cursor = addProductCollections.find()
@@ -53,6 +53,39 @@ async function run() {
         res.send(result)
      })
 
+     app.post('/cartProducts', async(req, res) => {
+      const newProductForCart = req.body;
+      const result = await newProductForCartCollections.insertOne(newProductForCart)
+      res.send(result);
+     })
+
+     app.get('/cartProducts', async(req, res) => {
+      const cursor = newProductForCartCollections.find()
+      const result = await cursor.toArray();
+      res.send(result);
+     })
+     
+
+     app.put('/addProducts/:id', async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) }
+      const option = { upsert: true }
+      const updatedProducts = req.body;
+      const products = {
+          $set: {
+              image_url: updatedProducts.image_url,
+              name: updatedProducts.name,
+              rating: updatedProducts.rating,
+              Price: updatedProducts.Price,
+              band_name: updatedProducts.band_name,
+              type: updatedProducts.type,
+              details: updatedProducts.details,
+
+          }
+      }
+      const result = await addProductCollections.updateOne(filter, products, option);
+      res.send(result)
+  })
       app.get('/brands/:band_name', async(req, res) => {
           const band_name = req.params.band_name;
           const query = {band_name: band_name}
