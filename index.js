@@ -27,7 +27,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+   
 
    
     const addProductCollections = client.db('addProductsDB').collection('addProducts');
@@ -121,21 +121,7 @@ app.get('/bands', (req, res) => {
   res.json(data);
 });
 
-  // app.get('/band/:id', (req, res) => {
-  //   const id = req.params.id;
-  //   const bandsProducts = products.filter(p => p.category_id === id);
-  //   res.send(bandsProducts)
-  // })
-//   app.get('/product/:id', (req, res) => {
-//   const id = req.params.id;
-//    const selectedProducts = products.find(p => p.id === id);
-//    res.send(selectedProducts)
-//   })
-//   app.get('/products/:id', (req, res) => {
-//     const id = req.params.id;
-//     const productDetails =  products.find(p => p.id === id)
-//     res.send(productDetails)
-// })
+
 
 app.get("/", (req, res) => {
     res.send("Welcome to our ElectroTech Insights")
